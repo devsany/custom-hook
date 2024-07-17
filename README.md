@@ -10,7 +10,8 @@ Web API Custom Hook
     secondary File:-CheckFetchFunction.jsx
 4.  # Primary File over View
 
-    import { useEffect, useState } from "react"; </br>
+    import { useEffect, useState } from "react";
+    
     const useFetch = (api) => {</br>
     const [data, setData] = useState(null);</br>
     const [error, setError] = useState(null);</br>
@@ -33,7 +34,7 @@ Web API Custom Hook
     };</br>
     export default useFetch;</br>
 
-5.  # Secondary File over View
+6.  # Secondary File over View
 
         import React, { useState } from "react";</br>
         import useFetch from "./fetch";</br>
@@ -65,5 +66,5 @@ Web API Custom Hook
 
         export default CheckFetchFunction;
 
-6.  Copy All line from 5th point and peast in you application
-7.  Modify the changes in your project.
+7.  Copy All line from 5th point and peast in you application
+8.  Modify the changes in your project.
