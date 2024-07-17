@@ -11,29 +11,29 @@ Web API Custom Hook
     
 5.  # Primary File over View
 ```javascript
-    import { useEffect, useState } from "react";
-    
-    const useFetch = (api) => { 
-    const [data, setData] = useState(null); 
-    const [error, setError] = useState(null); 
-    const [loading, setLoading] = useState(true); 
-    useEffect(() => {</br>
-    const apiData = async () => { 
-    try { 
-    const data = await fetch(api); 
-    const res = await data.json();
-    setData(res);
-    } catch (error) {
-    setError("api is not found plz put api in useFetch(\_\_\_)");
-    } finally {
-    setLoading(false);
-    }
-    };
-    apiData();
-    }, [api]);
-    return { data, error, loading };
-    };
-    export default useFetch;
+        import { useEffect, useState } from "react";
+        
+        const useFetch = (api) => { 
+        const [data, setData] = useState(null); 
+        const [error, setError] = useState(null); 
+        const [loading, setLoading] = useState(true); 
+        useEffect(() => {</br>
+        const apiData = async () => { 
+        try { 
+        const data = await fetch(api); 
+        const res = await data.json();
+        setData(res);
+        } catch (error) {
+        setError("api is not found plz put api in useFetch(\_\_\_)");
+        } finally {
+        setLoading(false);
+        }
+        };
+        apiData();
+        }, [api]);
+        return { data, error, loading };
+        };
+        export default useFetch;
 ```
 6.  # Secondary File over View
 ```javascript
@@ -53,14 +53,14 @@ Web API Custom Hook
         {loading
         ? "...loading"
         : `${data.map((i) => {
-                  return (
-                  <>
-                      <div>
-                      <span>{i.title}</span>
-                      </div>
-                  </>
-                  );
-              })}`}
+        return (
+        <>
+        <div>
+        <span>{i.title}</span>
+        </div>
+        </>
+        );
+        })}`}
         </div>
         );
         };
