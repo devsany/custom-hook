@@ -34,7 +34,7 @@ Web API Custom Hook
     return { data, error, loading };
     };
     export default useFetch;
-```javascript
+```
 6.  # Secondary File over View
 
         import React, { useState } from "react";</br>
