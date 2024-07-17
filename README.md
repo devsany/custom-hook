@@ -13,28 +13,28 @@ Web API Custom Hook
 ```javascript
     import { useEffect, useState } from "react";
     
-    const useFetch = (api) => {</br>
-    const [data, setData] = useState(null);</br>
-    const [error, setError] = useState(null);</br>
-    const [loading, setLoading] = useState(true);</br>
+    const useFetch = (api) => { 
+    const [data, setData] = useState(null); 
+    const [error, setError] = useState(null); 
+    const [loading, setLoading] = useState(true); 
     useEffect(() => {</br>
-    const apiData = async () => {</br>
-    try {</br>
-    const data = await fetch(api);</br>
-    const res = await data.json();</br>
-    setData(res);</br>
-    } catch (error) {</br>
-    setError("api is not found plz put api in useFetch(\_\_\_)");</br>
-    } finally {</br>
-    setLoading(false);</br>
-    }</br>
-    };</br>
-    apiData();</br>
-    }, [api]);</br>
-    return { data, error, loading };</br>
-    };</br>
-    export default useFetch;</br>
-
+    const apiData = async () => { 
+    try { 
+    const data = await fetch(api); 
+    const res = await data.json();
+    setData(res);
+    } catch (error) {
+    setError("api is not found plz put api in useFetch(\_\_\_)");
+    } finally {
+    setLoading(false);
+    }
+    };
+    apiData();
+    }, [api]);
+    return { data, error, loading };
+    };
+    export default useFetch;
+```javascript
 6.  # Secondary File over View
 
         import React, { useState } from "react";</br>
