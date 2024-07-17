@@ -10,61 +10,62 @@ Web API Custom Hook
     secondary File:-CheckFetchFunction.jsx
 4.  # Primary File over View
 
-    import { useEffect, useState } from "react";
-    const useFetch = (api) => {
-    const [data, setData] = useState(null);
-    const [error, setError] = useState(null);
-    const [loading, setLoading] = useState(true);
-    useEffect(() => {
-    const apiData = async () => {
-    try {
-    const data = await fetch(api);
-    const res = await data.json();
-    setData(res);
-    } catch (error) {
-    setError("api is not found plz put api in useFetch(\_\_\_)");
-    } finally {
-    setLoading(false);
-    }
-    };
-    apiData();
-    }, [api]);
-    return { data, error, loading };
-    };
-    export default useFetch;
+    import { useEffect, useState } from "react"; </br>
+    const useFetch = (api) => {</br>
+    const [data, setData] = useState(null);</br>
+    const [error, setError] = useState(null);</br>
+    const [loading, setLoading] = useState(true);</br>
+    useEffect(() => {</br>
+    const apiData = async () => {</br>
+    try {</br>
+    const data = await fetch(api);</br>
+    const res = await data.json();</br>
+    setData(res);</br>
+    } catch (error) {</br>
+    setError("api is not found plz put api in useFetch(\_\_\_)");</br>
+    } finally {</br>
+    setLoading(false);</br>
+    }</br>
+    };</br>
+    apiData();</br>
+    }, [api]);</br>
+    return { data, error, loading };</br>
+    };</br>
+    export default useFetch;</br>
 
 5.  # Secondary File over View
 
-    import React, { useState } from "react";
-    import useFetch from "./fetch";
+        import React, { useState } from "react";</br>
+        import useFetch from "./fetch";</br>
 
-    const CheckFetchFunction = () => {
-    const apiValue = "https://jsonplaceholder.typicode.com/photos";
-    const { data, error, loading } = useFetch(apiValue);
-    if (loading === true) {
-    console.log("...loading");
-    } else {
-    console.log(data);
-    }
+        const CheckFetchFunction = () => {</br>
+        const apiValue = "https://jsonplaceholder.typicode.com/photos";</br>
+        const { data, error, loading } = useFetch(apiValue);</br>
+        if (loading === true) {</br>
+        console.log("...loading");</br>
+        } else {</br>
+        console.log(data);</br>
+        }</br>
 
-    return (
-    <div>
-    {loading
-    ? "...loading"
-    : `${data.map((i) => {
-              return (
-              <>
-                  <div>
-                  <span>{i.title}</span>
-                  </div>
-              </>
-              );
-          })}`}
-    </div>
-    );
-    };
+    </br>
+        return (</br>
+        <div></br>
+        {loading</br>
+        ? "...loading"</br>
+        : `${data.map((i) => {</br>
+                  return (</br>
+                  <></br>
+                      <div></br>
+                      <span>{i.title}</span></br>
+                      </div></br>
+                  </></br>
+                  );</br>
+              })}`}</br>
+        </div></br>
+        );</br>
+        };</br>
 
-    export default CheckFetchFunction;
+        export default CheckFetchFunction;
 
 6.  Copy All line from 5th point and peast in you application
 7.  Modify the changes in your project.
