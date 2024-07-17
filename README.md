@@ -46,7 +46,6 @@ Web API Custom Hook
         } else {</br>
         console.log(data);</br>
         }</br>
-    </br>
         return (</br>
         <div></br>
         {loading</br>
