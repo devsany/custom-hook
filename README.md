@@ -10,7 +10,7 @@ Web API Custom Hook
     secondary File:-CheckFetchFunction.jsx
     
 5.  # Primary File over View
-
+```javascript
     import { useEffect, useState } from "react";
     
     const useFetch = (api) => {</br>
